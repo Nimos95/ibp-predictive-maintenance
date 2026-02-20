@@ -1,0 +1,37 @@
+{
+  "model_file": "../models/ibp_model_20260220.pkl",
+  "date": "2026-02-20T20:53:43.990534",
+  "features": [
+    "temperature",
+    "voltage_in",
+    "voltage_out",
+    "load_percent",
+    "battery_runtime_minutes",
+    "battery_cycles",
+    "battery_age_months",
+    "temp_trend_7d",
+    "voltage_std_3d",
+    "load_change_7d",
+    "battery_health"
+  ],
+  "n_features": 11,
+  "metrics": {
+    "precision": 0.9777777777777777,
+    "recall": 0.7857142857142857,
+    "f1": 0.8712871287128713,
+    "roc_auc": 0.9998428926317069
+  },
+  "feature_importance": {
+    "temperature": 0.09860722416699529,
+    "voltage_in": 0.051719428687303566,
+    "voltage_out": 0.020447022520379457,
+    "load_percent": 0.057500657023528266,
+    "battery_runtime_minutes": 0.4275521309246204,
+    "battery_cycles": 0.0185561733120622,
+    "battery_age_months": 0.035719415420950834,
+    "temp_trend_7d": 0.020755034017174604,
+    "voltage_std_3d": 0.20682901995224978,
+    "load_change_7d": 0.026617012151169312,
+    "battery_health": 0.03569688182356626
+  }
+}

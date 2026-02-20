@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Данные (если слишком большие)
+# data/*.csv
+
+# Модели
+models/*.pkl
+models/*.joblib
+
+# Jupyter
+*.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
