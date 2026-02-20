@@ -1,11 +1,23 @@
 """
 Streamlit-приложение для мониторинга парка ИБП.
 Загрузка CSV, расчёт риска по правилам, дашборд и детали по устройствам.
+
+Запуск: streamlit run app.py
 """
 
+import sys
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+
+# При запуске через "python app.py" контекста Streamlit нет — выходим без вызова st.*
+try:
+    from streamlit.runtime.scriptrunner_utils import get_script_run_ctx
+    if get_script_run_ctx() is None:
+        print("Запустите приложение командой: streamlit run app.py")
+        sys.exit(0)
+except Exception:
+    pass
 
 # --- Настройка страницы ---
 st.set_page_config(
@@ -45,8 +57,10 @@ def compute_risk_row_fixed(row):
     risk = 0.4 * norm_temp + 0.3 * norm_load + 0.3 * norm_age
     return min(1.0, max(0.0, risk))
 
-def prepare_data(df: pd.DataFrame) -> pd.DataFrame:
+def prepare_data(df: pd.DataFrame) -> pd.DataFrame | None:
     """Приводит колонки к единым именам и добавляет риск."""
+    if df is None:
+        return None
     df = df.copy()
     # Единые имена колонок (поддержка разных CSV)
     col_map = {
@@ -134,13 +148,19 @@ if uploaded is None:
     - Пример: можно использовать сгенерированный файл `data/ups_synthetic_2024_2025.csv`.
     """)
     st.stop()
+    sys.exit(0)
 
 df_raw = load_csv(uploaded)
 if df_raw is None or df_raw.empty:
     st.error("Не удалось прочитать файл или файл пуст.")
     st.stop()
+    sys.exit(1)
 
 df = prepare_data(df_raw)
+if df is None:
+    st.error("Ошибка подготовки данных.")
+    st.stop()
+    sys.exit(1)
 current = get_current_snapshot(df)
 current["status"] = current["risk_pct"].apply(risk_status)
 
