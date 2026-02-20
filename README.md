@@ -66,12 +66,7 @@
 | **F1-score** | 87.1% | Отличный баланс точности и полноты |
 | **ROC-AUC** | 99.98% | Модель почти идеально разделяет классы |
 
-### Матрица ошибок
-        Предсказано
-        0       1
-Реально 0 104,928 6
-        1 72 265
-
+### Ошибки модели
         
 - **Пропущено отказов:** 72 (22%)
 - **Ложных тревог:** 6 (менее 0.01%)
@@ -79,29 +74,29 @@
 ## 📈 Визуализации
 
 ### Распределения параметров
-![Распределения](images/1_distributions.png)
+![Распределения](images/1.png)
 
 ### Сравнение нормальных и предаварийных состояний
-![Сравнение по target](images/2_target_distributions.png)
+![Сравнение по target](images/2.png)
 
 ### Температура по устройствам
-![Ящики с усами](images/3_boxplots.png)
+![Ящики с усами](images/3.png)
 
 ### Динамика деградации
-![Временной ряд](images/4_timeseries.png)
+![Временной ряд](images/4.png)
 
 ### Матрица корреляций
-![Корреляции](images/5_correlation_matrix.png)
+![Корреляции](images/5.png)
 
 ### Важность признаков
-![Feature Importance](images/8_feature_importance.png)
+![Feature Importance](images/8.png)
 
 ### Матрица ошибок
-![Confusion Matrix](images/7_confusion_matrix.png)
+![Confusion Matrix](images/7.png)
 
 ## 🖥 Интерактивный дашборд (Streamlit)
 
-![Дашборд](images/dashboard_screenshot.png)
+![Дашборд](images/dashboard.pdf)
 
 **Функционал:**
 - Общий мониторинг всех ИБП с цветовой индикацией
@@ -129,23 +124,23 @@
    cd ibp-predictive-maintenance
    ```
 2. **Установить зависимости**
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 3. **Сгенерировать данные (опционально)**
-```bash
-cd data
-python generate_data.py
-```
+   ```bash
+   cd data
+   python generate_data.py
+   ```
 4. **Запустить Jupyter Notebook**
-```bash
-jupyter notebook notebooks/01_ibp_analysis.ipynb
-```
+   ```bash
+   jupyter notebook notebooks/01_ibp_analysis.ipynb
+   ```
 5. **Запустить Streamlit-дашборд**
-```bash
-cd streamlit_app
-streamlit run app.py
-```
+   ```bash
+   cd streamlit_app
+   streamlit run app.py
+   ```
 ## 📁 Структура проекта
 
 ibp-predictive-maintenance/
