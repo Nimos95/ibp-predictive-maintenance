@@ -1,3 +1,7 @@
+[![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python&logoColor=white)](https://python.org)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-orange?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28-red?logo=streamlit&logoColor=white)](https://streamlit.io/)
+
 # 🔋 Predictive Maintenance для парка ИБП
 
 Проект по предиктивной аналитике для источников бесперебойного питания (ИБП). Позволяет заранее выявлять оборудование с высоким риском отказа и планировать обслуживание.
